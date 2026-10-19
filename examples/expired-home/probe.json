@@ -1,0 +1,78 @@
+{
+  "viewports": [
+    "390x844",
+    "320x568"
+  ],
+  "anchors": {
+    "nav": "nav"
+  },
+  "screens": [
+    {
+      "name": "bad-expired",
+      "url": "http://127.0.0.1:5291/bad.html",
+      "primary": "#renew-main",
+      "tasks": [
+        {
+          "id": "renew",
+          "target": "#renew-main",
+          "alt": [
+            "#renew-top"
+          ],
+          "path": [
+            "#renew-main",
+            "#paynow"
+          ],
+          "expect": "#paynow"
+        },
+        {
+          "id": "topup",
+          "target": "#topup"
+        }
+      ]
+    },
+    {
+      "name": "good-expired",
+      "url": "http://127.0.0.1:5291/good.html",
+      "primary": "#renew-main",
+      "tasks": [
+        {
+          "id": "renew",
+          "target": "#renew-main",
+          "path": [
+            "#renew-main",
+            "#paynow"
+          ],
+          "expect": "#paynow"
+        },
+        {
+          "id": "topup",
+          "target": "#topup"
+        }
+      ]
+    },
+    {
+      "name": "bad-expired-proto",
+      "url": "http://127.0.0.1:5291/bad.html",
+      "primary": "#renew-main",
+      "prototype": "proto-bad.js",
+      "tasks": [
+        {
+          "id": "renew",
+          "target": "#renew-main",
+          "alt": [
+            "#renew-top"
+          ],
+          "path": [
+            "#renew-main",
+            "#paynow"
+          ],
+          "expect": "#paynow"
+        },
+        {
+          "id": "topup",
+          "target": "#topup"
+        }
+      ]
+    }
+  ]
+}

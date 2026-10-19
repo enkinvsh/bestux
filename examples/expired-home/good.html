@@ -1,0 +1,27 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>kite</title><style>*{box-sizing:border-box;margin:0}
+body{background:#0e1110;color:#e8ece9;font:15px/1.45 -apple-system,system-ui,sans-serif;max-width:430px;margin:0 auto;padding:0 16px 96px}
+header{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.02em}
+.card{background:#171c1a;border:1px solid #232a27;border-radius:20px;padding:16px;margin-top:12px}
+.muted{color:#8a948f;font-size:13px}
+.big{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.btn{display:flex;align-items:center;justify-content:center;height:48px;border-radius:14px;border:0;font:600 15px/1 inherit;width:100%;margin-top:12px;cursor:pointer}
+.btn-accent{background:#009938;color:#fff}
+.btn-ghost{background:#232a27;color:#e8ece9}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.chip{background:#232a27;color:#e8ece9;border:0;border-radius:12px;height:44px;padding:0 14px;font:600 14px/1 inherit;cursor:pointer}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#121615;border-top:1px solid #232a27;display:flex;justify-content:space-around;padding:6px 0 10px}
+nav a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#8a948f;text-decoration:none;font-size:11px;min-width:56px;min-height:48px;justify-content:center}
+nav a.on{color:#2fd36b}
+.sheet{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:430px;background:#171c1a;border-radius:20px 20px 0 0;padding:20px 16px 28px;display:none;z-index:10}
+.sheet.open{display:block}
+.promo{background:linear-gradient(135deg,#0b3d22,#0e5a31);border:0}</style></head><body>
+<header><span class="logo">kite</span></header>
+<section class="card"><div class="muted">Подписка</div><div class="big">Истекла 12 октября</div><p class="muted">Сервис сейчас не работает. Тариф Basic: 3 устройства, 250 ГБ.</p><button class="btn btn-accent" id="renew-main" data-open="pay">Продлить за 250 ₽</button></section>
+<section class="card"><div class="row"><div><div class="muted">Баланс</div><div class="big">0 ₽</div></div><button class="chip" id="topup">Пополнить</button></div></section>
+<section class="card"><div class="row"><div><div class="muted">Устройства</div><div>3 из 3 подключены</div></div><button class="chip">Управлять</button></div></section>
+<section class="card"><div class="row"><div><div>Приглашай друзей</div><div class="muted">100 ₽ за каждого друга</div></div><button class="chip">Пригласить</button></div></section>
+<section class="card"><div class="row"><div><div>Подарить доступ</div><div class="muted">Ссылка придёт в Telegram</div></div><button class="chip">Подарить</button></div></section>
+<nav><a class="on" href="#">Главная</a><a href="#">Подписка</a><a href="#">Баланс</a><a href="#">Друзья</a><a href="#">Ещё</a></nav>
+<div class="sheet" id="pay"><div class="big">Оплата</div><p class="muted">Basic, 30 дней, 250 ₽</p><button class="btn btn-accent" id="paynow">Оплатить 250 ₽</button></div>
+<script>document.querySelectorAll('[data-open=pay]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();document.getElementById('pay').classList.add('open')}))</script></body></html>
